@@ -1,0 +1,7 @@
+.{
+    .name = "zig-xml",
+    .version = "0.1.0",
+    .dependencies = .{},
+    .minimum_zig_version = "0.13.0",
+    .paths = .{ "build.zig", "build.zig.zon", "lib/xml.zig", "lib/parser.zig" },
+}
