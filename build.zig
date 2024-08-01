@@ -6,13 +6,13 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const xml = b.addModule("xml", .{
-        .root_source_file = b.path("src/xml.zig"),
+        .root_source_file = b.path("lib/xml.zig"),
         .target = target,
         .optimize = optimize,
     });
 
     const unit_tests = b.addTest(.{
-        .root_source_file = b.path("src/test.zig"),
+        .root_source_file = b.path("lib/test.zig"),
         .target = target,
         .optimize = optimize,
     });

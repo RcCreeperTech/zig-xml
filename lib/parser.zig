@@ -1,5 +1,5 @@
 const std = @import("std");
-const xml = @import("./root.zig");
+const xml = @import("./xml.zig");
 
 const string = []const u8;
 const Parser = @This();
