@@ -371,7 +371,7 @@ fn parsePITarget(alloc: std.mem.Allocator, p: *Parser) anyerror!?StringIndex {
     return try parseName(alloc, p) orelse return null;
 }
 
-/// Char   ::=   #x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF]	/* any Unicode character, excluding the surrogate blocks, FFFE, and FFFF. */
+/// Char   ::=   #x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF] /* any Unicode character, excluding the surrogate blocks, FFFE, and FFFF. */
 fn parseChar(p: *Parser) anyerror!?u21 {
     try p.peekAmt(3) orelse return null;
     if (std.unicode.utf8Decode(p.slice()[0..1]) catch null) |cp| {
